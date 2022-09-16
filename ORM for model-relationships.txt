@@ -1,0 +1,33 @@
+ORM QUERY FOR MODEL RELATIONSHIP----IN SOCIAL APP PROJECT
+
+-TO ADD A POST---
+1-GET USER FIRST-------user=User.objects.get(username="eg")  or get(id="eg")
+2-THEN ADD POST--------Posts.objects.create(title="eg",description="eg",image=null,user=user)
+
+
+-TO ADD A COMMENT TO A POST
+1-GET THE POST FIRST-----post=Posts.objects.get(id="eg")
+2-THEN GET THE USER------user=User.objects.get(username="eg")  or get(id="eg")
+3-THEN ADD COMMENT-------Comments.objects.create(post=post,comment="eg",user=user)
+
+
+-TO GET ALL POSTS OF A SPECIFIC USER
+1-GET THE USER FIRST-----user=User.objects.get(username="eg")  or get(id="eg")
+2-THEN GET ALL POSTS-----user.posts_set.all()       -----in posts p must be small
+
+
+-TO GET ALL COMMENTS OF A SPECIFIC USER 
+1-GET THE USER FIRST-----user=User.objects.get(username="eg")  get(id="eg")
+2-THEN GET ALL COMENTS---user.comments_set.all()
+
+
+-TO GET ALL COMMENTS OF SPECIFIC USER FOR A SPECIFIC POST
+1-GET THE USER FIRST-----user=User.objects.get(username="eg")  or get(id="eg")
+2-THEN GET SEPECIFIC POST-----post=Posts.objects.get(id="eg")
+3-THEN GET COMMENTS OF THE POST BY THE USER----user.comments.get()
+
+
+-TO GET THE USERS WHO COMMNETED FOR A POST
+1-GET THE POST FIRST-----post=Posts.objects.get(id="eg")
+2-GET THE ALL COMMENTS---all_comments_for_post1=post.comments_set.all()
+3-GET THE USERS----------[c.user for c in all_comments_for_post1]

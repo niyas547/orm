@@ -1,0 +1,19 @@
+athentication and permissions
+
+AUTHENTICATION:
+-Basic Authentication-----it needs to give username and password during all data passing.and u.name and pwd will gives in Auth username and password
+-Token Authentication-----it needs a token that will get from passing username and password by forms.and that token given in headers Authorization Token tokenname
+-jwt                 -----same as like Token authentication
+
+
+PERMISSIONS:
+-isAuthenticated     -----login or not checking
+-AllowAny            -----No permission required
+-isAuthenticatedorReadOnly-----login or ot checking if loggedin all possible else readonly will be possible
+-isadmin user        -----Permission only possible for admin
+
+
+MODEL RELATIONSHIPS:
+-One to One          -----
+-One to Many-ForeignKey-----
+-Many to Many        -----
